@@ -6,19 +6,27 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbyheDpU2ONgxryNmFxdyw
 const form = document.forms['submit-to-google-sheet']
 const span = document.querySelector('#response-msg');
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
   e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => {
+
+  try {
+    const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: new FormData(form)
+    });
+
+    if(response.ok) {
         console.log('Success!', response);
         span.innerHTML = 'Thank you for subscribing!';
         setTimeout(() => {
             span.innerHTML = '';
         }, 5000)
         form.reset();
-    })
-    .catch(error => {
-        console.error('Error!', error.message)
-        span.innerHTML = 'An error has occured. Please try again later.'
-    });
+    }
+  } catch(e) {
+    console.error('Error!', e.message)
+    span.innerHTML = 'An error has occured. Please try again later.'
+    span.classList.add('error')
+  }
+
 });

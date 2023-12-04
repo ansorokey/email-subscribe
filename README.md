@@ -8,14 +8,20 @@ This project was made by following [How To Make Working Email Subscription Form 
 
 ## Key Features and Technologies
 - JavaScript, HTML, CSS
+- Try/Catch
+- Fetch
+- Async/Await
 - Form Submission
 - Event Listeners
 - Google Sheets
 - Google App Scripts
 
 ## How To Use
-Enter
-View the emails added [here](https://docs.google.com/spreadsheets/d/1uXS4sX9zz3uBRi6xuDzZ-TqbMk0Np-1fiGcip4T6HKY/edit?usp=sharing)
+Enter any email (a fake email is preferred, any format) in the input field.
+Click the arrow button to submit.
+A response will appear below the input indicating the submission status.
+When successfully submitted, the email will be visible in a Google Sheets document along with other submitted emails.
+View the Google Sheets document [here](https://docs.google.com/spreadsheets/d/1uXS4sX9zz3uBRi6xuDzZ-TqbMk0Np-1fiGcip4T6HKY/edit?usp=sharing)
 
 ## Future Features
 - The response can take a few seconds, so a loading screen or animation would be nice
